@@ -120,9 +120,12 @@ h4, h3 {
             color: #334D6E;
             font-size: 13px;
         }
+
         .dashboard-list li a:hover, .dashboard-settings li a:hover, .toggle-sidebar a {
             text-decoration: none;
+            color: #109CF1;
         }
+
         a#selected-icon {
             color: #109CF1; 
         }
@@ -144,7 +147,7 @@ h4, h3 {
         .dashboard-settings li a {
             margin-left: 16px;
             color: #334D6E;
-            font-size: 13px;
+            font-size: 13px;C
 
 
         }
@@ -245,7 +248,7 @@ h4, h3 {
 .title-chart div {
     width: 50%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     
     align-items: center;
 }
@@ -486,8 +489,12 @@ select#filter {
     color: #4c5862;
     cursor: pointer;
     font-size: 12px;
+    transition: transform .3s;
 }
 
+.number:hover{
+    transform: scale(2);
+}
 /* ..................................... NOTIFICATION PART ..................................... */
 .notifications {
     width: 100%;
@@ -511,7 +518,9 @@ select#filter {
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
     border-radius: 4px;
 }
-
+.notif1:hover, .notif2:hover, .notif3:hover {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+}
  .notif-header {
     display: flex;
     width: 95%;
@@ -578,6 +587,12 @@ select#filter {
     font-size: 13px;
 }
 
+.profil-pic img{
+    transition: transform .3s;
+}
+.profil-pic img:hover{
+    transform: scale(2);
+}
 #notif1-pp {
     width: 30px;
     height: 30px;
@@ -588,7 +603,7 @@ select#filter {
 .notif-button {
     width: 100px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     font-size: 11px;
 }
 
@@ -616,7 +631,7 @@ select#filter {
 }
 
 #edit-button {
-    justify-self: end;
+    justify-self: flex-end;
 }
 
 .edit-delete-buttons {
