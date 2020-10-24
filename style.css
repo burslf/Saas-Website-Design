@@ -1,0 +1,791 @@
+/* ======================================  GENERAL STYLING ==================================== */
+/* ============================================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+}
+
+label, option {
+    font-size: 12px;
+    margin: 0;
+}
+body {
+    font-family: 'Poppins';
+}
+
+h4, h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ==============================  STRUCTURING THE CONTAINER   =============================== */
+/* =========================================================================================== */
+.my-container {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    grid-template-rows: repeat(16, auto);
+    height: 100vh;
+}
+
+/* ==============================  SIDEBAR STRUCTURE / DASHBOARD ============================== */
+/* ============================================================================================ */
+.side-bar {
+    grid-row: 1/17;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-title {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    color: #109CF1;
+    font-size: 25px;
+}
+
+.dashboard-container {
+    border-top: 1px solid #ebeff2;
+    grid-row: 2/17;
+    grid-column: 1/5;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ebeff2;
+}
+        .dashboard-profile {
+            display: flex;
+            height: 20%;
+            justify-content: space-evenly;
+        }
+            
+                .profile-info{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: start;
+                    width: 60%;
+                    height: 100%;
+                 }
+                .profile-name {
+                    width: 100%;
+                    height: 20%;
+                    font-size: 14px;
+                    font-weight: 500;
+                }   
+                .profile-mail {
+                    color: #90a0b7;
+                    font-size: 11px;
+                    width: 100%;
+                    height: 20%;
+                }  
+
+        .dashboard-list{
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .dashboard-list ul {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-evenly;
+            margin-left: 25px;
+        }
+        .dashboard-list li a {
+            margin-left: 16px;
+            color: #334D6E;
+            font-size: 13px;
+        }
+        .dashboard-list li a:hover, .dashboard-settings li a:hover, .toggle-sidebar a {
+            text-decoration: none;
+        }
+        a#selected-icon {
+            color: #109CF1; 
+        }
+
+.dashboard-settings{
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+        .dashboard-settings ul {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-evenly;
+            margin-left: 25px;
+        }
+        .dashboard-settings li a {
+            margin-left: 16px;
+            color: #334D6E;
+            font-size: 13px;
+
+
+        }
+        .settings-icon {
+            height: 10%;
+        }
+
+.toggle-sidebar {
+    justify-content: space-between;
+    height: 10%;
+    margin-left: 25px;
+}
+        .toggle-sidebar img {
+            margin-right: 15px;    
+        }
+        .toggle-sidebar a {
+            color: #334D6E;
+            font-size: 11px;
+        }
+
+/* ==============================  SEARCH BAR STRUCTURE ============================== */
+/* ================================================================================== */
+
+.search-bar {
+    grid-row: 1/2;
+    grid-column: 2/17;
+    display: flex;
+    min-height: 60px;
+}
+
+        .search {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-left: 30px;
+            margin-right: 40px;
+        }
+        .fas.fa-search{
+            width: 15px;
+            height: 15px;
+        }
+
+        #search-bar {
+            border: none;
+            margin-left: 20px;
+            width: 100%;
+            font-size: 12px;
+            outline: none;
+            font-size: 12px;
+            height: 100%;
+        }
+
+        .fas.fa-search {
+            color: #bdbdbd
+        }
+
+/* ==============================  MAIN CONTENT ============================== */
+/* ==============================               ===============================*/
+.main-content {
+    grid-row: 2/17;
+    grid-column: 2/17;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 60% 40%;
+    background: #f5f6f8;
+    border-top: 1px solid #EBEFF2;
+    padding: 36px;
+    grid-gap: 30px;
+}
+
+/* =============================    TASK CHARTS    =============================*/
+.tasks-chart {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    background: white;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    height: 100%;
+    margin-right: 30px;
+    min-height: 320px;
+}
+
+.title-chart {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    border-bottom: 1px #EBEFF2 solid;
+}
+.title-chart h3{
+    width: 50%;
+}
+.title-chart div {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    
+    align-items: center;
+}
+.title-mobile {
+    display: none;
+}
+select#filter {
+    font-size: 12px;
+}
+.graph {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    min-height: 180px;
+}
+
+.graph-chart {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+    height: 50%;
+    background: url('./img/graphs/60.svg') no-repeat center top transparent;
+    background-size: contain;
+}
+
+.graph-details {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 10px;
+}
+.graph-details li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    letter-spacing: 0.1em;
+}
+.graph-details li img {
+    margin-right: 10px;
+}
+#active-tasks {
+    color: #FFB946;
+}
+
+#completed-tasks {
+    color: #2ED47A;
+}
+
+#ended-tasks {
+    color: #F7685B;
+}
+
+/* ===========================     DEALS GRAPHIC    =============================*/
+.deals-graphic { 
+    grid-row: 1/2;
+    grid-column: 2/3;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    justify-content: space-around;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    height: 100%;
+    margin-right: 30px;
+    min-height: 315px;
+}
+
+.deals-graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+.graph-deal{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    background: url('./img/graphs/deals_graphic.svg') no-repeat left;
+    background-size: contain;
+    /* max-width: 450px;
+    min-height: 250px; */
+}
+
+
+.deals-details {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 10px;
+    
+}
+
+#deals-details{
+    color: #109CF1;
+}
+
+/* ========================================        TASK       =====================================*/
+.tasks {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    height: 100%;
+    min-height: 550px;
+}
+
+/*..................................... PROGRESS BAR / CALENDAR ..................................... */
+.progressbar-date {
+    width: 95%;
+    height: 25%;
+    min-height: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    font-size: 17px;
+}
+
+.progressbar {
+    width: 95%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.progress {
+    height: 0.3rem;
+}
+.progress-bar{
+    background-color: #2ED47A;
+    height: 0.3rem;
+}
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    color: #334D6E;
+    font-size: 13px; 
+}
+
+.title-task {
+    font-weight: 500;
+
+    display: flex;
+    align-self: center;
+}
+
+.date {
+    width: 95%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actualdate {
+    width: 100%;
+    height: 30%;
+}
+
+.calendar {
+    width: 95%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.day1,.day2,.day3,.day4,.day5,.day6,.day7 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.day1 {
+    display: flex;
+    align-items: center;
+}
+
+.special-day {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+}
+
+.number.sun {
+    color: white;
+    width: 24px;
+    height: 24px;
+    background: #109CF1;
+    border-radius: 50%;
+    text-align: center;
+    align-self: center;
+}
+
+.day.mon {
+    color: #109CF1;
+}
+
+.number.mon {
+    color: #109CF1;
+}
+
+
+.day {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: #99a6b7;
+    font-size: 13px;
+    cursor: default;
+}
+
+.number {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #4c5862;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* ..................................... NOTIFICATION PART ..................................... */
+.notifications {
+    width: 100%;
+    height: 70%;
+    /* min-height: 400px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #EBEFF2;
+}
+
+.notif1,.notif2,.notif3 {
+    width: 95%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+}
+
+ .notif-header {
+    display: flex;
+    width: 95%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+.notif-title-type {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.notif-title-type h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 56%;
+}
+
+
+.notif-type {
+    color: #90A0B7;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.notif-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notif-date {
+    width: 100%;
+    font-size: 13px;
+    height: 20%;
+    color: #a5abb0;
+}
+.notif-date span{
+    color: #4C5862;
+}
+
+.notif-container {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    justify-content: space-between;
+    align-items: center;
+    color: #707683;
+}
+
+.profil-pic {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 13px;
+}
+
+#notif1-pp {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.notif-button {
+    width: 100px;
+    display: flex;
+    justify-content: end;
+    font-size: 11px;
+}
+
+
+#completed {
+    border: none;
+    background: #2ED47A;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 84px;
+    height: 22px;
+}
+
+#ended {
+    border: none;
+    background: #F7685B;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 84px;
+    height: 22px;
+}
+
+#edit-button {
+    justify-self: end;
+}
+
+.edit-delete-buttons {
+    display: flex;
+    margin-left: auto;
+}
+
+/* ..................................... "SHOW MORE" PART ..................................... */
+
+.showmore {
+    display: flex;
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+        .showmore p {
+            cursor: pointer;
+            color: #109CF1;
+            font-weight: 600;
+            font-size: 13px;
+            margin: 0;
+        }
+
+
+        .title-chart label {
+            color: #6A707E;
+        }
+
+        #filter {
+            border: none;
+            appearance: none;
+            background: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #4cb5f5;
+}
+
+/* ================================  MOBILE RESPONSIVE ============================== */
+/* ================================================================================== */
+
+@media only screen and (max-width: 730px) {
+
+    .side-bar{
+        display: none;
+    }
+    .my-container {
+        height: 140vh;
+    }
+    .main-content{
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: 100%;
+        grid-column: 1/17;
+        grid-row: 2/17;
+        padding: 0px;
+        grid-gap: initial;
+        border: none;
+    }
+    .search-bar{
+        grid-column: 1/17;
+        grid-row: 1/2;
+    }
+    .tasks{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        box-shadow: initial;
+        height: 70vh;
+        border-radius: initial;
+    }
+    
+            .progressbar-date{
+                justify-content: space-around;
+                height: 10%;
+            }
+            .progressbar {
+                height: 50%;
+            }
+            .progressbar div span {
+                display: inline;
+            }
+
+            .date{
+                height: 30%;
+            }
+            .calendar {
+                display: none;
+            }
+            .showmore {
+                display: none;
+            }
+            .notif1, .notif2, .notif3 {
+                width: 90%;
+                height: 126px;
+                margin: 0;
+                align-items:  center;
+            }
+            .notif1:hover, .notif2:hover, .notif3:hover {
+                box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+            }
+            a img#edit-button {
+                display: none;
+            }
+            .profil-pic {
+                width: auto;
+            }
+            #notif1-pp {
+                margin-right: 10px;
+            }
+            .notifications{
+                height: 90%;
+                justify-content: space-evenly;
+            }
+            .notif-header{
+                width: 90%;
+            }
+
+    .deals-graphic {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 100%;
+        border-radius: initial;
+    }
+            .title-chart {
+                display: none;
+            }
+
+            .title-mobile {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                align-self: center;
+                height: 20%;
+                width: 90%;
+            }
+            .title-mobile div {
+                display: flex;
+                width: 30%;
+                justify-content: space-around;
+            }
+
+            .deals-details{
+                justify-content: flex-start;
+            }
+    .tasks-chart{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        width: 100%;
+        border-radius: initial;
+    }
+
+
+}
+
+/* ================================  TABLET RESPONSIVE ============================== */
+/* ================================================================================== */
+
+@media only screen and (max-width: 1100px) {
+    .side-bar{
+        display: none;
+    }
+    .main-content{
+        grid-column: 1/17;
+        grid-row: 3/17;
+    }
+
+    .search-bar{
+        grid-column: 1/17;
+        grid-row: 1/3;
+    }
+
+}
+
